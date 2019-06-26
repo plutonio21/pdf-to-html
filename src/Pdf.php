@@ -32,6 +32,7 @@ class Pdf extends Base
             'ignoreImages' => false,
             'zoom' => 1.5,
             'noFrames' => true,
+            'noMerge' => true,
         ],
 
         'outputDir' => '',
@@ -223,6 +224,9 @@ class Pdf extends Base
                     break;
                 case 'noFrames':
                     $result = $value ? '-noframes' : '';
+                    break;
+                case 'noMerge':
+                    $result = $value ? '-nomerge' : '';
                     break;
             }
             $generated[] = $result;
